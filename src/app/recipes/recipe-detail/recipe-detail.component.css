@@ -35,3 +35,7 @@ p {
   background-color: #ad498d;
 }
 
+.recipe-item-options a {
+  cursor: pointer;
+}
+

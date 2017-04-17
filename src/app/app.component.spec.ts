@@ -10,12 +10,12 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
-import { RecipeService } from './recipes/recipe.service';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   let component: AppComponent;
   let compiled;
+  let app;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -37,11 +37,11 @@ describe('AppComponent', () => {
       fixture = TestBed.createComponent(AppComponent);
       component = fixture.componentInstance;
       compiled = fixture.debugElement.nativeElement;
+      app = fixture.debugElement.componentInstance;
     });
   }));
 
   it('should create the app', async(() => {
-    const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
 
@@ -59,12 +59,23 @@ describe('AppComponent', () => {
     compiled.querySelector('a#shopping-list').click();
     fixture.detectChanges();
     compiled.querySelector('input#name').setAttribute('value', 'Bread');
-    fixture.detectChanges();
     compiled.querySelector('input#amount').setAttribute('value', '1');
-    fixture.detectChanges();
     compiled.querySelector('button#addIngredient').click();
     fixture.detectChanges();
     expect(compiled.querySelector('ul.list-group').textContent).toContain('Bread (1)');
+  }));
+
+  it(`should navigate back to 'Recipe Shop'`, async(() => {
+    compiled.querySelector('a#recipes-list').click();
+    fixture.detectChanges();
+    expect(compiled.querySelector('a.recipe-item').textContent).toContain('New Orleans Jambalaya');
+  }));
+
+  it(`should view 'Recipe Details'`, async(() => {
+    fixture.detectChanges();
+    compiled.querySelector('a.recipe-item').click();
+    fixture.detectChanges();
+    expect(compiled.querySelector('button.btn-manage').textContent).toContain('Recipe Options');
   }));
 
 });
