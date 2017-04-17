@@ -9,6 +9,8 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { RecipeService } from './recipes/recipe.service';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -28,6 +30,9 @@ describe('AppComponent', () => {
         ShoppingEditComponent,
         DropdownDirective
       ],
+      providers: [
+        ShoppingListService
+      ]
     }).compileComponents().then(() => {
       fixture = TestBed.createComponent(AppComponent);
       component = fixture.componentInstance;
@@ -51,6 +56,7 @@ describe('AppComponent', () => {
   }));
 
   it(`should add a new 'Ingredient'`, async(() => {
+    compiled.querySelector('a#shopping-list').click();
     fixture.detectChanges();
     compiled.querySelector('input#name').setAttribute('value', 'Bread');
     fixture.detectChanges();
