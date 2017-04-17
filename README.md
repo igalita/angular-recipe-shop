@@ -1,6 +1,6 @@
 # angular-recipe-shop
 
-<a href="https://travis-ci.org/xeqtor/angular-recipe-shop"><img src="https://travis-ci.org/xeqtor/angular-recipe-shop.svg?branch=master"/></a>
+[![Build Status](https://travis-ci.org/xeqtor/angular-recipe-shop.svg?branch=master)](https://travis-ci.org/xeqtor/angular-recipe-shop)
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
