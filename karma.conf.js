@@ -41,15 +41,15 @@ module.exports = function (config) {
     browsers: ['Chrome'],
     customLaunchers: {
       Chrome_travis_ci: {
-        base: 'Firefox'
+        base: 'Chrome',
+        flags: ['--no-sandbox']
       }
     },
     singleRun: false
   };
 
   if(process.env.TRAVIS){
-    configuration.browsers = ['Firefox_travis_ci'];
-    configuration.singleRun = true;
+    configuration.browsers = ['Chrome_travis_ci'];
   }
 
   config.set(configuration);
