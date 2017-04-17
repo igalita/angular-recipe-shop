@@ -1,15 +1,18 @@
 <a href="#"
-   class="list-group-item clearfix"
+   class="list-group-item clearfix recipe-item"
    (click)="onSelected(recipe)">
-  <div class="pull-left">
-    <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
-    <p class="list-group-item-text">{{ recipe.description }}</p>
-  </div>
-  <span class="pull-right">
+  <div class="col-xs-12">
+    <div class="col-xs-8">
+      <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
+      <p class="list-group-item-text">{{ recipe.description }}</p>
+    </div>
+    <div class="col-xs-4">
         <img
           [src]="recipe.imagePath"
           alt="{{ recipe.name}}"
-          class="img-responsive img-height-50"
+          class="img-responsive img-height-50 img-rounded img-thumbnail"
         >
-      </span>
+      </div>
+  </div>
+
 </a>
