@@ -8,7 +8,7 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import {DropdownDirective} from './shared/dropdown.directive';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -39,11 +39,5 @@ describe('AppComponent', () => {
       const compiled = fixture.debugElement.nativeElement;
       expect(compiled.querySelector('a.navbar-brand').textContent).toContain('Recipe Shop');
   }));
-  //
-  // it('should render title in a h1 tag', async(() => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.debugElement.nativeElement;
-  //   expect(compiled.querySelector('h1').textContent).toContain('app works!');
-  // }));
+
 });
