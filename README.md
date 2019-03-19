@@ -1,6 +1,6 @@
 # angular-recipe-shop
 
-[![Build Status](https://travis-ci.org/xeqtor/angular-recipe-shop.svg?branch=master)](https://travis-ci.org/xeqtor/angular-recipe-shop)
+[![Build Status](https://travis-ci.org/ionutgalita/angular-recipe-shop.svg?branch=master)](https://travis-ci.org/xeqtor/angular-recipe-shop)
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
